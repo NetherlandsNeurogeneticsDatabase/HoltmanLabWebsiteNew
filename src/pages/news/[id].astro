@@ -24,6 +24,8 @@ const {
 	image,
 	externalUrl,
 } = entry.data;
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title={`${title} - News`}>
@@ -44,7 +46,7 @@ const {
 					image && (
 						<div class="mb-8 rounded-2xl overflow-hidden">
 							<img
-								src={image}
+								src={`${base}/${image.replace(/^\//, "")}`}
 								alt={title}
 								class="w-full h-auto object-cover"
 							/>

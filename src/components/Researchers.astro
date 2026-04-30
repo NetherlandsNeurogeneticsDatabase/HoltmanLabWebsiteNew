@@ -2,6 +2,7 @@
 import LucideMail from "~icons/lucide/mail";
 import { Image } from "astro:assets";
 import { researchers } from "@/data/researchers";
+const base = import.meta.env.BASE_URL;
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -12,7 +13,7 @@ import { researchers } from "@/data/researchers";
 				<!-- Image -->
 				<div class="h-56 w-full overflow-hidden">
 					<Image
-						src={person.image}
+						src={`${base}${person.image.replace(/^\//, "")}`}
 						alt={person.name}
 						width={400}
 						height={300}
