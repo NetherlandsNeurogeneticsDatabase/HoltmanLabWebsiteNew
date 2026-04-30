@@ -26,5 +26,11 @@ export const MainMenu: MenuItem[] = [
         hoverClass: "hover:text-brand-green",
         activeClass: "text-brand-green",
     },
+    {
+        label: "Links",
+        href: "/HoltmanLabWebsiteNew/links",
+        hoverClass: "hover:text-brand-green",
+        activeClass: "text-brand-green",
+    },
  
 ];

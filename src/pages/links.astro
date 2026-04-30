@@ -1,0 +1,90 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Section from "@/components/Section.astro";
+import Container from "@/components/Container.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+const base = import.meta.env.BASE_URL;
+
+const links = [
+	{
+		label: "GitHub",
+		description: "Code and development repositories of the NND project",
+		href: "https://github.com/NetherlandsNeurogeneticsDatabase",
+	},
+	{
+		label: "Netherlands Brain Bank",
+		description: "Source of high-quality post-mortem brain tissue samples",
+		href: "https://www.brainbank.nl/",
+	},
+	{
+		label: "UMCG - Holtman Group",
+		description: "Research group page at University Medical Center Groningen",
+		href: "https://umcgresearch.org/w/neurogenomics-and-transcriptional-regulation",
+	},
+	{
+		label: "Zenodo",
+		description: "Open data and dataset releases",
+		href: "https://zenodo.org/records/10534111",
+	},
+	{
+		label: "Hugging Face",
+		description: "Shared models and computational resources",
+		href: "https://huggingface.co/NND-project",
+	},
+];
+---
+
+<Layout title="Links - Holtman Lab">
+	<Section>
+		<Container>
+			<div class="max-w-5xl mx-auto">
+
+				<!-- Header -->
+				<SectionHeading>
+					<div class="text-center">
+						<img
+							src="/HoltmanLabWebsiteNew/images/NND_logo_no_background.png"
+							alt="NND logo"
+							class="w-24 h-24 mx-auto mb-4"
+						/>
+
+						<h1 class="text-4xl font-bold tracking-wide">
+							Useful Links
+						</h1>
+
+						<p class="mt-2 text-brand-foreground/70">
+							External resources, collaborators and data platforms
+						</p>
+					</div>
+				</SectionHeading>
+
+				<!-- Cards -->
+				<div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+					{
+						links.map((link) => (
+							<a
+								href={link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="group bg-white rounded-2xl shadow-sm hover:shadow-md transition p-6 border border-brand-foreground/10"
+							>
+								<h3 class="text-xl font-fredoka font-bold text-brand-foreground group-hover:text-brand-blue transition">
+									{link.label}
+								</h3>
+
+								<p class="mt-2 text-sm text-brand-foreground/70 leading-relaxed font-nunito">
+									{link.description}
+								</p>
+
+								<div class="mt-4 text-sm font-bold text-brand-blue">
+									Visit →
+								</div>
+							</a>
+						))
+					}
+				</div>
+
+			</div>
+		</Container>
+	</Section>
+</Layout>
