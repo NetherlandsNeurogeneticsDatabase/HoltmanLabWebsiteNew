@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
 	site: "https://netherlandsneurogeneticsdatabase.github.io/HoltmanLabWebsiteNew",
-	base: "/",
+	base: "/HoltmanLabWebsiteNew",
 
 	output: "static",
 
