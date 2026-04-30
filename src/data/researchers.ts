@@ -1,12 +1,4 @@
-import ImageMan1 from "@/assets/images/man-1.jpg";
-import ImageMan2 from "@/assets/images/man-2.jpg";
-import ImageMan3 from "@/assets/images/man-3.jpg";
-import ImageMan4 from "@/assets/images/man-4.jpg";
-import ImageWoman1 from "@/assets/images/woman-1.jpg";
-import ImageWoman2 from "@/assets/images/woman-2.jpg";
-import ImageWoman3 from "@/assets/images/woman-3.jpg";
-import ImageWoman4 from "@/assets/images/woman-4.jpg";
-import ImageWoman5 from "@/assets/images/woman-5.jpg";
+
 
 export const researchers = [
 	{
