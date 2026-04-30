@@ -13,15 +13,18 @@ import Agenda from "@/components/Agenda.astro";
 import Testimonials from "@/components/Testimonials.astro";
 import FormNewsletter from "@/components/forms/FormNewsletter.astro";
 import Faq from "@/components/Faq.astro";
+
+---
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Holtman Lab">
 	<Section class="relative">
 		<img
 			class="absolute inset-0 object-cover object-top w-full h-full z-0"
-			src="/brainfrontpage.jpeg"
+			src={`${base}brainfrontpage.jpeg`}
 			alt="Brain front page"
-			/>
+		/>
 
 		<Container class:list={"relative z-20"}>
 			<MainHeading>
@@ -56,8 +59,7 @@ import Faq from "@/components/Faq.astro";
 		
 		<img
 			class="mt-8 w-full max-w-3xl mx-auto h-auto rounded-xl object-cover"
-
-			src="/grouppic3.jpg"
+			src={`${base}grouppic3.jpg`}
 			alt="Our group visual"
 		/>
 	</Container>

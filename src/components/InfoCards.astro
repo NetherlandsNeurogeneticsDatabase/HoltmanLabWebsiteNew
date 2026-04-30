@@ -4,41 +4,47 @@ import LucideCalendarDays from '~icons/lucide/calendar-days'
 import LucideBookOpen from '~icons/lucide/book-open'
 import LucideUtensils from '~icons/lucide/utensils'
 
+const base = import.meta.env.BASE_URL;
+
 const cards = [
 	{
 		title: "Brain bank staff visit!",
-		description: "The Netherlands Brain Bank staff visited 'Bodies the exhibition' in Amsterdam - purely profesional curiosity of course.",
+		description:
+			"The Netherlands Brain Bank staff visited 'Bodies the exhibition' in Amsterdam - purely profesional curiosity of course.",
 		color: "bg-brand-blue text-white",
-		image: "/images/brainbankvisit.png",
-		link: "/HoltmanLabWebsiteNew/news",
+		image: `${base}images/brainbankvisit.png`,
+		link: `${base}news`,
 	},
 	{
 		title: "New paper on MS",
-		description: "We are excited to share a new publication in collaboration with Karim Kreft from the University of Nottingham on...",
+		description:
+			"We are excited to share a new publication in collaboration with Karim Kreft from the University of Nottingham on...",
 		color: "bg-brand-blue text-white",
-		image: "/images/nature_genetics.jpg",
-		link: "/HoltmanLabWebsiteNew/news",
+		image: `${base}images/nature_genetics.jpg`,
+		link: `${base}news`,
 	},
 	{
 		title: "New NND website",
-		description: "The Netherlands Neurogenomics Database (NND) has launched a new website.\n\n",
+		description:
+			"The Netherlands Neurogenomics Database (NND) has launched a new website.",
 		color: "bg-brand-blue text-white",
-		image: "/images/NND_logo_orange.png",
-		link: "/HoltmanLabWebsiteNew/news",
+		image: `${base}images/NND_logo_orange.png`,
+		link: `${base}news`,
 	},
 	{
 		title: "iCNS kickoff",
-		description: "Kickoff event in Amsterdam launching the iCNS research program.\n\n",
+		description:
+			"Kickoff event in Amsterdam launching the iCNS research program.",
 		color: "bg-brand-blue text-white",
-		image: "/images/i-CNS.jpg",
-		link: "/HoltmanLabWebsiteNew/reading",
+		image: `${base}images/i-CNS.jpg`,
+		link: `${base}reading`,
 	},
 ];
 ---
 
 <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 	{
-		cards.map(({ icon: Icon, title, description, color, image, link }) => (
+		cards.map(({ title, description, color, image, link }) => (
 			<a
 				href={link}
 				class="group rounded-lg overflow-hidden shadow hover:shadow-lg transition bg-white"
@@ -48,15 +54,13 @@ const cards = [
 					<img
 						src={image}
 						alt={title}
-						class="w-full h-full object-contain group-hover:scale-105 transition"
+						class="w-full h-full object-cover group-hover:scale-105 transition"
 					/>
 				</div>
 
 				<!-- Content -->
 				<div class={`p-5 ${color}`}>
-					<div class="flex items-center gap-2 mb-2">
-						<h3 class="text-xl font-bold">{title}</h3>
-					</div>
+					<h3 class="text-xl font-bold mb-2">{title}</h3>
 
 					<p class="text-sm font-medium opacity-90 whitespace-pre-line">
 						{description}
