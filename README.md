@@ -63,7 +63,7 @@ The dev server starts at **http://localhost:4321**.
 | --- | --- |
 | `/` | Home page — hero, news highlights, about, programs, schedule, testimonials, FAQ, newsletter signup |
 | `/teachers` | Meet the team — staff cards with name, role, and bio |
-| `/blog` | School news & announcements index |
+| `/news` | School news & announcements index |
 | `/blog/[id]` | Individual blog post |
 | `/contact` | Contact form, enrollment form, and school location/info |
 
@@ -102,7 +102,7 @@ The dev server starts at **http://localhost:4321**.
 All global site settings live in **`src/data/config.ts`**:
 
 ```ts
-export const siteName = "Elementary";
+export const siteName = "Holtman Lab";
 export const phone    = { href: "tel:+123456789", label: "(123) 456-789" };
 export const email    = { href: "mailto:info@elementary.com", label: "info@elementary.com" };
 export const address  = { street: "…", city: "…", zip: "…", state: "…" };
@@ -130,7 +130,7 @@ image: "/images/science-fair.jpg"
 Your post content here…
 ```
 
-Posts are automatically picked up and listed on the `/blog` page.
+Posts are automatically picked up and listed on the `/news` page.
 
 ---
 

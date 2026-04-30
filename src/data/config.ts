@@ -1,7 +1,7 @@
 // Global variables
 export const siteLang = "en-US";
 export const siteCurrency = "USD";
-export const siteName = "Elementary";
+export const siteName = "Holtman Lab";
 export const siteSlogan = "";
 export const themeColor = "#fef08a";
 export const unitSystem = "imperial";

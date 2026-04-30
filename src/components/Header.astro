@@ -1,6 +1,6 @@
 ---
 import { siteName } from "@/data/config";
-import IconLogo from "@/assets/logo/logo.svg";
+import IconLogo from "@/assets/logo/NND_logo_no_background.png?url";
 import { MainMenu } from "@/data/menu";
 import MobileMenu from "@/components/MobileMenu.astro";
 
@@ -16,7 +16,7 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 		<div class="container py-4 flex items-center justify-between gap-x-4">
 			<!-- Logo -->
 			<a href="/" class="flex gap-x-4 items-center">
-				<IconLogo class:list={"size-12"} />
+				<img src={IconLogo} alt="logo" class="w-12 h-12" />
 				<span class="font-bold lowercase font-fredoka text-4xl">{siteName}</span>
 			</a>
 

@@ -6,40 +6,67 @@ import LucideUtensils from '~icons/lucide/utensils'
 
 const cards = [
 	{
-		icon: LucideBell,
-		title: "Announcements",
-		description: "Spring Picture Day is April 15th! Don't forget to smile 📸",
+		title: "Brain bank staff visit!",
+		description: "The Netherlands Brain Bank staff visited 'Bodies the exhibition' in Amsterdam - purely profesional curiosity of course.",
 		color: "bg-brand-blue text-white",
+		image: "/images/brainbankvisit.png",
+		link: "/news",
 	},
 	{
-		icon: LucideCalendarDays,
-		title: "Events",
-		description: "Science Fair — April 22nd. Start your experiments now! 🔬",
-		color: "bg-brand-green text-white",
+		title: "New paper on MS",
+		description: "We are excited to share a new publication in collaboration with Karim Kreft from the University of Nottingham on...",
+		color: "bg-brand-blue text-white",
+		image: "/images/nature_genetics.jpg",
+		link: "/news",
 	},
 	{
-		icon: LucideUtensils,
-		title: "Lunch Menu",
-		description: "This week: Taco Tuesday, Pizza Friday & fresh fruit daily 🍕",
-		color: "bg-brand-red text-white",
+		title: "New NND website",
+		description: "The Netherlands Neurogenomics Database (NND) has launched a new website.\n\n",
+		color: "bg-brand-blue text-white",
+		image: "/images/NND_logo_orange.png",
+		link: "/news",
 	},
 	{
-		icon: LucideBookOpen,
-		title: "Reading Challenge",
-		description: "Read 20 books this semester and earn a special prize! 📚",
-		color: "bg-brand-yellow text-white",
+		title: "iCNS kickoff",
+		description: "Kickoff event in Amsterdam launching the iCNS research program.\n\n",
+		color: "bg-brand-blue text-white",
+		image: "/images/i-CNS.jpg",
+		link: "/reading",
 	},
 ];
 ---
 
 <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 	{
-		cards.map(({ icon: Icon, title, description, color }) => (
-			<div class={`p-6 rounded-lg shadow ${color}`}>
-				<Icon class="size-8 mb-3" />
-				<h3 class="text-2xl font-bold mb-4">{title}</h3>
-				<p class="font-semibold">{description}</p>
-			</div>
+		cards.map(({ icon: Icon, title, description, color, image, link }) => (
+			<a
+				href={link}
+				class="group rounded-lg overflow-hidden shadow hover:shadow-lg transition bg-white"
+			>
+				<!-- Image -->
+				<div class="h-40 overflow-hidden">
+					<img
+						src={image}
+						alt={title}
+						class="w-full h-full object-contain group-hover:scale-105 transition"
+					/>
+				</div>
+
+				<!-- Content -->
+				<div class={`p-5 ${color}`}>
+					<div class="flex items-center gap-2 mb-2">
+						<h3 class="text-xl font-bold">{title}</h3>
+					</div>
+
+					<p class="text-sm font-medium opacity-90 whitespace-pre-line">
+						{description}
+					</p>
+
+					<div class="mt-4 text-sm underline opacity-90 group-hover:opacity-100">
+						Read more →
+					</div>
+				</div>
+			</a>
 		))
 	}
 </div>

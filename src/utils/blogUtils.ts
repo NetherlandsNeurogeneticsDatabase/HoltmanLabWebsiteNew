@@ -1,10 +1,14 @@
-export type BlogCategory = "Announcement" | "Event" | "Holiday" | "PTA";
+export type BlogCategory = "Announcement" | "Event" | "Holiday" | "PTA" | "Publication" | "Team" | "Funding" | "Achievement";
 
 const categoryColorMap: Record<BlogCategory, string> = {
 	Announcement: "bg-brand-blue",
 	Event: "bg-brand-green",
+	Publication: "bg-brand-red",
+	Team: "bg-brand-purple",
 	Holiday: "bg-brand-yellow",
 	PTA: "bg-brand-red",
+	Funding: "bg-brand-orange",
+	Achievement: "bg-brand-pink",
 };
 
 /**

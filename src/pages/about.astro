@@ -1,0 +1,109 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Section from "@/components/Section.astro";
+import Container from "@/components/Container.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+---
+
+<Layout title="About - Holtman Lab">
+
+	<!-- Hero -->
+	<Section class="relative">
+		<img
+			class="absolute inset-0 object-cover object-top w-full h-full z-0"
+			src="/brainfrontpage.jpeg"
+			alt="Brain front page"
+		/>
+
+		<Container class:list={"relative z-20 text-center"}>
+			<h1 class="text-5xl font-bold tracking-wide mb-4">
+				About the Holtman Lab
+			</h1>
+
+		</Container>
+	</Section>
+
+	<!-- Mission -->
+	<Section>
+		<Container class:list={"text-center"}>
+			<SectionHeading>
+				<h2 class="text-4xl font-bold tracking-wide">Mission</h2>
+			</SectionHeading>
+
+			<p class="mt-6 max-w-3xl mx-auto">
+				We aim to unravel the molecular mechanisms underlying brain disorders by combining human brain data, computational biology, and experimental organoid models to understand disease heterogeneity and improve diagnosis and prognosis.
+			</p>
+		</Container>
+	</Section>
+
+	<!-- Understanding Heterogeneity -->
+	<Section class:list={"bg-neutral-50"}>
+		<Container class:list={"text-center"}>
+			<SectionHeading>
+				<h2 class="text-4xl font-bold tracking-wide">
+					Understanding Heterogeneity in Brain Disorders
+				</h2>
+			</SectionHeading>
+
+			<div class="mt-6 max-w-4xl mx-auto space-y-4">
+				<p>
+					Most brain disorders, including psychiatric and neurodegenerative diseases, are difficult to diagnose and study due to their substantial 
+					<strong>clinical, pathological, and genetic heterogeneity.</strong> This complexity is often overlooked, yet it plays a crucial role in determining disease mechanisms, progression, and patient outcomes.
+				</p>
+
+				<p>
+					The <strong>Holtman Lab</strong>, part of the University Medical Center Groningen, investigates this heterogeneity to better understand the biological basis of brain disorders. In collaboration with the Netherlands Brain Bank, the lab established the 
+					<strong>Netherlands Neurogenomics Database (NND)</strong>, a platform that integrates clinical, genetic, and neuropathological data from deeply characterized human brain donors to enable systematic cross-disorder analyses.
+				</p>
+
+				<p>
+					Our research combines <strong>computational approaches with experimental neuroscience.</strong> We analyze post-mortem human brain material from the Netherlands Brain Bank to identify molecular and cellular signatures associated with disease heterogeneity. In parallel, we use human brain organoid models to experimentally investigate the functional effects of key 
+					<strong>genetic risk factors and environmental influences</strong> implicated in brain disorders.
+				</p>
+
+				<p>
+					By integrating human brain data with experimental model systems, the Holtman Lab aims to uncover 
+					<strong>shared and disorder-specific disease mechanisms</strong>, ultimately contributing to improved 
+					<strong>diagnosis, prognosis, and therapeutic strategies</strong> for brain disorders.
+				</p>
+			</div>
+		</Container>
+	</Section>
+
+	<!-- Research Pillars -->
+	<Section>
+		<Container class:list={"text-center"}>
+			<SectionHeading>
+				<h2 class="text-4xl font-bold tracking-wide">Research Pillars</h2>
+			</SectionHeading>
+
+			<div class="grid gap-6 grid-cols-1 md:grid-cols-3 mt-8 max-w-6xl mx-auto">
+
+				<div class="p-6 rounded-lg shadow bg-white">
+					<h3 class="text-2xl font-bold mb-3">Disease Heterogeneity</h3>
+					<p class="font-semibold">
+						We investigate the clinical, genetic, and pathological diversity within and across brain disorders to identify distinct disease trajectories and biological subtypes.
+					</p>
+				</div>
+
+				<div class="p-6 rounded-lg shadow bg-white">
+					<h3 class="text-2xl font-bold mb-3">Human Brain Data Integration</h3>
+					<p class="font-semibold">
+						Using deeply characterized post-mortem brain material from the Netherlands Brain Bank and the 
+						<strong>Netherlands Neurogenomics Database</strong>, we study the molecular architecture of brain disorders across diagnostic boundaries.
+					</p>
+				</div>
+
+				<div class="p-6 rounded-lg shadow bg-white">
+					<h3 class="text-2xl font-bold mb-3">Experimental Modeling</h3>
+					<p class="font-semibold">
+						We use human brain organoids and other experimental systems to test the functional effects of 
+						<strong>genetic risk variants and environmental factors</strong>, linking molecular mechanisms to disease phenotypes.
+					</p>
+				</div>
+
+			</div>
+		</Container>
+	</Section>
+
+</Layout>

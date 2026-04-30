@@ -1,0 +1,20 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Section from "@/components/Section.astro";
+import Container from "@/components/Container.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+import BlogList from "@/components/BlogList.astro";
+---
+
+<Layout title="News!">
+	<Section>
+		<Container>
+			<SectionHeading>
+				<h1 class="text-4xl font-bold tracking-wide">Group news & Updates</h1>
+				<p>Stay up to date with news, publications & more</p>
+			</SectionHeading>
+
+			<BlogList />
+		</Container>
+	</Section>
+</Layout>

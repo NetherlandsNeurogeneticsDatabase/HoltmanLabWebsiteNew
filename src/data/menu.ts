@@ -10,26 +10,21 @@ export const MainMenu: MenuItem[] = [
     },
     {
         label: "About",
-        href: "/#about",
+        href: "/about",
         hoverClass: "hover:text-brand-red",
         activeClass: "text-brand-red",
     },
     {
-        label: "Teachers",
-        href: "/teachers",
+        label: "Researchers",
+        href: "/researchers",
         hoverClass: "hover:text-brand-blue",
         activeClass: "text-brand-blue",
     },
     {
-        label: "Blog",
-        href: "/blog",
+        label: "News",
+        href: "/news",
         hoverClass: "hover:text-brand-green",
         activeClass: "text-brand-green",
     },
-    {
-        label: "Contact",
-        href: "/contact",
-        hoverClass: "hover:text-brand-yellow",
-        activeClass: "text-brand-yellow",
-    },
+ 
 ];
