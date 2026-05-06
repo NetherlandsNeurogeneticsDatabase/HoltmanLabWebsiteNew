@@ -128,3 +128,31 @@
 	font-weight: 400;
 	src: url("/fonts/fredoka/fredoka-v17-latin-regular.woff2") format("woff2");
 }
+
+.brain-bg {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	z-index: 0;
+	pointer-events: none;
+
+	/* 👇 mask center area (where text is) */
+	mask-image: radial-gradient(circle at center, transparent 30%, black 70%);
+	-webkit-mask-image: radial-gradient(circle at center, transparent 30%, black 70%);
+}
+
+.brain {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.6;
+	pointer-events: none; /* 👈 important: mouse passes through */
+	will-change: transform;
+}
+
+/* floating motion */
+@keyframes float {
+	0%   { transform: translateY(0px); }
+	50%  { transform: translateY(-15px); }
+	100% { transform: translateY(0px); }
+}

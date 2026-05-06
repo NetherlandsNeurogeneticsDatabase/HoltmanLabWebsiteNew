@@ -18,12 +18,9 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Holtman Lab">
-	<Section class="relative">
-		<img
-			class="absolute inset-0 object-cover object-top w-full h-full z-0"
-			src={`${base}/brainfrontpage.jpeg`}
-			alt="Brain front page"
-		/>
+	<Section class="relative" class:list={"bg-neutral-50"}>
+		<!-- Animated brain background -->
+		<div id="brain-bg" class="brain-bg"></div>
 
 		<Container class:list={"relative z-20"}>
 			<MainHeading>
@@ -38,6 +35,99 @@ const base = import.meta.env.BASE_URL;
 				</div>
 			</MainHeading>
 		</Container>
+
+		<!-- Script -->
+		<script>
+			const container = document.getElementById("brain-bg");
+			const NUM_BRAINS = 100;
+
+			const brainImages = [
+				"HoltmanLabWebsiteNew/images/brain1.png",
+				"HoltmanLabWebsiteNew/images/brain2.png",
+				"HoltmanLabWebsiteNew/images/brain3.png",
+				"HoltmanLabWebsiteNew/images/brain4.png"
+			];
+
+			const brains = [];
+			let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+			// track mouse
+			window.addEventListener("mousemove", (e) => {
+				mouse.x = e.clientX;
+				mouse.y = e.clientY;
+			});
+
+			// create brains
+			for (let i = 0; i < NUM_BRAINS; i++) {
+				const brain = document.createElement("img");
+
+				brain.src = brainImages[Math.floor(Math.random() * brainImages.length)];
+				brain.classList.add("brain");
+
+				const rect = container.getBoundingClientRect();
+
+				const x = Math.random() * rect.width;
+				const y = Math.random() * rect.height;
+
+				const size = 20 + Math.random() * 40;
+
+				Object.assign(brain.style, {
+					left: x + "px",
+					top: y + "px",
+					width: size + "px",
+					position: "absolute"
+				});
+
+				container.appendChild(brain);
+
+				brains.push({
+					el: brain,
+					x,
+					y,
+					vx: 0,
+					vy: 0,
+					baseX: x,
+					baseY: y
+				});
+			}
+
+			// animation loop
+			function animate() {
+				brains.forEach((b) => {
+					const dx = b.x - mouse.x;
+					const dy = b.y - mouse.y;
+					const dist = Math.sqrt(dx * dx + dy * dy) || 0.001;
+
+					const repelRadius = 100;
+
+					// 🧠 if mouse is close → push away
+					if (dist < repelRadius) {
+						const force = (repelRadius - dist) / repelRadius;
+
+						b.vx += (dx / dist) * force * 2;
+						b.vy += (dy / dist) * force * 2;
+					}
+
+					// 🧲 gentle pull back to original position
+					b.vx += (b.baseX - b.x) * 0.002;
+					b.vy += (b.baseY - b.y) * 0.002;
+
+					// damping (friction)
+					b.vx *= 0.95;
+					b.vy *= 0.95;
+
+					// update position
+					b.x += b.vx;
+					b.y += b.vy;
+
+					b.el.style.transform = `translate(${b.x - b.baseX}px, ${b.y - b.baseY}px)`;
+				});
+
+				requestAnimationFrame(animate);
+			}
+
+			animate();
+		</script>
 	</Section>
 
 	<Section>
