@@ -37,70 +37,69 @@ const base = import.meta.env.BASE_URL;
 		</Container>
 
 		<!-- Script -->
-		<script>
+		<script is:inline define:vars={{ base }}>
 			const container = document.getElementById("brain-bg");
+			if (!container) return;
+
 			const NUM_BRAINS = 100;
 
 			const brainImages = [
-				"HoltmanLabWebsiteNew/images/brain1.png",
-				"HoltmanLabWebsiteNew/images/brain2.png",
-				"HoltmanLabWebsiteNew/images/brain3.png",
-				"HoltmanLabWebsiteNew/images/brain4.png"
+				`${base}images/brain1.png`,
+				`${base}images/brain2.png`,
+				`${base}images/brain3.png`,
+				`${base}images/brain4.png`
 			];
 
 			const brains = [];
 			let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
-			// track mouse
 			window.addEventListener("mousemove", (e) => {
 				mouse.x = e.clientX;
 				mouse.y = e.clientY;
 			});
 
-			// create brains
-			for (let i = 0; i < NUM_BRAINS; i++) {
-				const brain = document.createElement("img");
-
-				brain.src = brainImages[Math.floor(Math.random() * brainImages.length)];
-				brain.classList.add("brain");
-
+			function createBrains() {
 				const rect = container.getBoundingClientRect();
 
-				const x = Math.random() * rect.width;
-				const y = Math.random() * rect.height;
+				for (let i = 0; i < NUM_BRAINS; i++) {
+					const brain = document.createElement("img");
 
-				const size = 20 + Math.random() * 40;
+					brain.src = brainImages[Math.floor(Math.random() * brainImages.length)];
+					brain.classList.add("brain");
 
-				Object.assign(brain.style, {
-					left: x + "px",
-					top: y + "px",
-					width: size + "px",
-					position: "absolute"
-				});
+					const x = Math.random() * rect.width;
+					const y = Math.random() * rect.height;
+					const size = 20 + Math.random() * 40;
 
-				container.appendChild(brain);
+					Object.assign(brain.style, {
+						left: `${x}px`,
+						top: `${y}px`,
+						width: `${size}px`,
+						position: "absolute"
+					});
 
-				brains.push({
-					el: brain,
-					x,
-					y,
-					vx: 0,
-					vy: 0,
-					baseX: x,
-					baseY: y
-				});
+					container.appendChild(brain);
+
+					brains.push({
+						el: brain,
+						x,
+						y,
+						vx: 0,
+						vy: 0,
+						baseX: x,
+						baseY: y
+					});
+				}
 			}
 
-			// animation loop
 			function animate() {
-				brains.forEach((b) => {
+				for (const b of brains) {
 					const dx = b.x - mouse.x;
 					const dy = b.y - mouse.y;
 					const dist = Math.sqrt(dx * dx + dy * dy) || 0.001;
 
 					const repelRadius = 100;
 
-					// 🧠 if mouse is close → push away
 					if (dist < repelRadius) {
 						const force = (repelRadius - dist) / repelRadius;
 
@@ -108,24 +107,22 @@ const base = import.meta.env.BASE_URL;
 						b.vy += (dy / dist) * force * 2;
 					}
 
-					// 🧲 gentle pull back to original position
 					b.vx += (b.baseX - b.x) * 0.002;
 					b.vy += (b.baseY - b.y) * 0.002;
 
-					// damping (friction)
 					b.vx *= 0.95;
 					b.vy *= 0.95;
 
-					// update position
 					b.x += b.vx;
 					b.y += b.vy;
 
 					b.el.style.transform = `translate(${b.x - b.baseX}px, ${b.y - b.baseY}px)`;
-				});
+				}
 
 				requestAnimationFrame(animate);
 			}
 
+			createBrains();
 			animate();
 		</script>
 	</Section>
@@ -142,16 +139,15 @@ const base = import.meta.env.BASE_URL;
 
 	<Section class:list={"bg-neutral-50"} id="about">
 		<Container>
-		<SectionHeading>
-			<h2 class="text-4xl font-bold tracking-wide">Our Group</h2>
-		</SectionHeading>
-		
-		<img
-			class="mt-8 w-full max-w-3xl mx-auto h-auto rounded-xl object-cover"
-			src={`${base}/grouppic3.jpg`}
-			alt="Our group visual"
-		/>
-	</Container>
-	</Section>
+			<SectionHeading>
+				<h2 class="text-4xl font-bold tracking-wide">Our Group</h2>
+			</SectionHeading>
 
+			<img
+				class="mt-8 w-full max-w-3xl mx-auto h-auto rounded-xl object-cover"
+				src={`${base}grouppic3.jpg`}
+				alt="Our group visual"
+			/>
+		</Container>
+	</Section>
 </Layout>
