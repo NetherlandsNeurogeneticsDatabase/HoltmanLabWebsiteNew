@@ -143,11 +143,22 @@ const base = import.meta.env.BASE_URL;
 				<h2 class="text-4xl font-bold tracking-wide">Our Group</h2>
 			</SectionHeading>
 
+		
+
 			<img
 				class="mt-8 w-full max-w-3xl mx-auto h-auto rounded-xl object-cover"
 				src={`${base}/grouppic3.jpg`}
 				alt="Our group visual"
 			/>
+
+				<div class="mt-8 flex justify-center">
+				<a
+					href={`${base}/researchers`}
+					class="mt-4 block text-sm underline opacity-90 hover:opacity-100 transition-opacity"
+				>
+					Read more about our researchers →
+				</a>
+			</div>
 		</Container>
 	</Section>
 </Layout>
