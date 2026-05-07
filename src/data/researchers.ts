@@ -43,4 +43,18 @@ export const researchers = [
 		image: "/images/pingpong.png",
 		email: "e.j.hoekstra@umcg.nl",
 	},
+	{
+		name: "Marysia Michalak",
+		role: "Intern",
+		bio: "I am working on establishing a robust CRISPRi system to downregulate the POLG gene in cerebral organoids. By inducing mitochondrial dysfunction, we aim to mimic aspects of cellular aging and generate a more physiologically relevant aged phenotype in this model.",
+		image: "/images/Marysia_picture.png",
+		email: "m.a.michalak@umcg.nl",
+	},
+	{
+		name: "Emily Farrugia",
+		role: "Intern",
+		bio: "Benchmarking dissociation strategies for dorsal forebrain organoids to optimize single-cell resolution transcriptomics and examine how prenatal stressors alter neurodevelopment and neuropsychiatric disorder risk.",
+		image: "/images/Emily_picture.jpeg",
+		email: "e.farrugia@umcg.nl",
+	},
 ];
