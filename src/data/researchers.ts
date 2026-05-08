@@ -57,4 +57,11 @@ export const researchers = [
 		image: "/images/Emily_picture.jpeg",
 		email: "e.farrugia@umcg.nl",
 	},
+	{
+		name: "Sanne Jansen",
+		role: "Intern",
+		bio: "I am working with synthetic raw-medical files representing the NBB-cohort, applying Optical Character Recognition and de-identification tools to be able to extract key neuropathological features aiming to disentangle of the heterogeneity of neuropathological disease trajectories.",
+		image: "/images/Sanne.jpeg",
+		email: "s.j.jansen@umcg.nl",
+	},
 ];
