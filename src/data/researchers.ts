@@ -42,7 +42,7 @@ export const researchers = [
 		bio: "Builds and maintains the NND infrastructure, computational pipelines, and data systems.",
 		image: "/images/pingpong.png",
 		email: "e.j.hoekstra@umcg.nl",
-	},
+	}, 
 	{
 		name: "Marysia Michalak",
 		role: "Intern",
