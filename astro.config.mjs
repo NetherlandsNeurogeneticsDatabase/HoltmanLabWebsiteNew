@@ -4,7 +4,7 @@ import Icons from "unplugin-icons/vite";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-	site: "https://netherlandsneurogeneticsdatabase.github.io/HoltmanLabWebsiteNew",
+	site: "holtmanlab.nnd.academy/",
 	base: "/HoltmanLabWebsiteNew",
 
 	output: "static",
