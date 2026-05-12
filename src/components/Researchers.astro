@@ -13,7 +13,7 @@ const base = import.meta.env.BASE_URL;
 				<!-- Image -->
 				<div class="h-56 w-full overflow-hidden">
 					<Image
-						src={`${base}/${person.image.replace(/^\//, "")}`}
+						src={`/${person.image.replace(/^\//, "")}`}
 						alt={person.name}
 						width={400}
 						height={300}
