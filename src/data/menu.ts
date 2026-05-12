@@ -3,32 +3,32 @@ import type { MenuItem } from "@/types";
 export const MainMenu: MenuItem[] = [
     {
         label: "Home",
-        href: "/HoltmanLabWebsiteNew",
+        href: "/",
         // class: "hover:text-brand-blue",
         hoverClass: "hover:text-brand-blue",
         activeClass: "text-brand-blue",
     },
     {
         label: "About",
-        href: "/HoltmanLabWebsiteNew/about",
+        href: "/about",
         hoverClass: "hover:text-brand-red",
         activeClass: "text-brand-red",
     },
     {
         label: "Researchers",
-        href: "/HoltmanLabWebsiteNew/researchers",
+        href: "/researchers",
         hoverClass: "hover:text-brand-blue",
         activeClass: "text-brand-blue",
     },
     {
         label: "News",
-        href: "/HoltmanLabWebsiteNew/news",
+        href: "/news",
         hoverClass: "hover:text-brand-green",
         activeClass: "text-brand-green",
     },
     {
         label: "Links",
-        href: "/HoltmanLabWebsiteNew/links",
+        href: "/links",
         hoverClass: "hover:text-brand-green",
         activeClass: "text-brand-green",
     },
