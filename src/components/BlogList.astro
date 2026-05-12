@@ -40,7 +40,7 @@ const base = import.meta.env.BASE_URL;
 	<div class="flex flex-col gap-6">
 		{
 			posts.map((post) => {
-				const href = `${base}/news/${post.id}`;
+				const href = `/news/${post.id}`;
 
 				return (
 					<div class="blog-item" data-category={post.data.category}>
