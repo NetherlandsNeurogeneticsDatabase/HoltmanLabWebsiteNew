@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
 	site: "https://holtmanlab.nnd.academy/HoltmanLabWebsiteNew",
-	base: "/HoltmanLabWebsiteNew",
+	base: "/",
 
 	output: "static",
 
