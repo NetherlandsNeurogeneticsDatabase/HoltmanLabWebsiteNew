@@ -35,7 +35,7 @@ const base = import.meta.env.BASE_URL;
 
 				<!-- Back -->
 				<a
-					href="/HoltmanLabWebsiteNew/news"
+					href="/news"
 					class="inline-flex items-center gap-1 text-sm text-brand-foreground/60 hover:text-brand-foreground mb-8 transition-colors"
 				>
 					← Back to news
@@ -46,7 +46,7 @@ const base = import.meta.env.BASE_URL;
 					image && (
 						<div class="mb-8 rounded-2xl overflow-hidden">
 							<img
-								src={`${image.replace(/^\//, "")}`}
+								src={`/images/${image.replace(/^\//, "")}`}
 								alt={title}
 								class="w-full h-auto object-cover"
 							/>
